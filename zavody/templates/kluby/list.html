@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Přehled klubů
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-danger text-center text-uppercase m-3">Přehled klubů</h2>
+    <div>
+        <table class="table table-active table-hover table-responsive-lg">
+            <thead class="bg-danger text-light">
+                <tr>
+                    <th>Logo</th>
+                    <th>Název klubu</th>
+                    <th>Místo</th>
+                    <th class="text-right">Rok založení</th>
+                    <th class="text-center">Počet členů</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for klub in kluby %}
+                <tr>
+                    <td>{% if klub.logo %}<img src="{{ klub.logo.url }}" alt="Logo {{ klub.nazev }}" class="logo-klubu rounded-pill">{% endif %}</td>
+                    <td><b><a href="{% url 'detail_klubu' klub.id %}">{{ klub.nazev.upper }}</a></b></td>
+                    <td>{{ klub.misto }}</td>
+                    <td class="text-right">{{ klub.zalozeni }}</td>
+                    <td class="text-center"><span class="badge-pill badge-danger">{{ klub.cyklista_set.count }}</span></td>
+                </tr>
+                </a>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

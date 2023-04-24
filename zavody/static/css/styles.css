@@ -7,3 +7,11 @@ header {
 .box-rounded {
     border-radius: 20px !important;
 }
+
+.logo-klubu {
+    max-width: 60px;
+}
+
+table td {
+    vertical-align: middle !important;
+}
