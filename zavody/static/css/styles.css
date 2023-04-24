@@ -1,0 +1,9 @@
+header {
+    background-image: url('../img/cyklistika-logo.png');
+    background-repeat: no-repeat;
+    background-position: right 5% center;
+}
+
+.box-rounded {
+    border-radius: 20px !important;
+}

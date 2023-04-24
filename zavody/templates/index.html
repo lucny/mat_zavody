@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12 text-center bg-info mt-3 mb-3 box-rounded">
+            <h2 class="text-white p-3">Naděje amatérského peletonu</h2>
+        </div>
+    {% for cyklista in cykliste %}
+    <div class="col-lg-3 col-md-6 text-center">
+        <p><img src="{{ cyklista.fotka.url }}" alt="{{ cyklista.prijmeni }}" class="img-fluid rounded-circle"></p>
+        <h3><a href="#" class="btn btn-info">{{ cyklista.jmeno }} {{ cyklista.prijmeni|upper }}</a></h3>
+        <p>Ročník: <b>{{ cyklista.narozeni.year }}</b></p>
+        <p class="small">Oddíl: <b>{{ cyklista.klub }}</b></p>
+    </div>
+    {% endfor %}
+    </div>
+{% endblock %}
